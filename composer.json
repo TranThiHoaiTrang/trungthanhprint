@@ -1,0 +1,22 @@
+{
+	"name": "webhd/php-core",
+	"description": "Webhd PHP core",
+	"authors": [
+		{
+			"name": "WEBHD Team"
+		}
+	],
+	"autoload": {
+		"psr-4": {},
+		"files": []
+	},
+	"require": {
+		"matthiasmullie/minify": "^1.3.71",
+		"vectorface/whip": "^v0.4.0"
+	},
+	"config": {
+		"platform": {
+			"php": "7.4"
+		}
+	}
+}

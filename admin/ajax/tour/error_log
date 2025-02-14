@@ -1,0 +1,11 @@
+[30-Nov-2023 10:55:42 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}', expecting ';' in /home/donatourist/public_html/libraries/Helper.php on line 83
+[30-Nov-2023 10:55:43 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}', expecting ';' in /home/donatourist/public_html/libraries/Helper.php on line 83
+[30-Nov-2023 10:55:43 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}', expecting ';' in /home/donatourist/public_html/libraries/Helper.php on line 83
+[30-Nov-2023 10:55:44 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}', expecting ';' in /home/donatourist/public_html/libraries/Helper.php on line 83
+[30-Nov-2023 10:55:44 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}', expecting ';' in /home/donatourist/public_html/libraries/Helper.php on line 83
+[30-Nov-2023 10:55:44 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}', expecting ';' in /home/donatourist/public_html/libraries/Helper.php on line 83
+[30-Nov-2023 10:55:44 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}', expecting ';' in /home/donatourist/public_html/libraries/Helper.php on line 83
+[30-Nov-2023 10:55:44 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '}', expecting ';' in /home/donatourist/public_html/libraries/Helper.php on line 83
+[23-Jan-2024 14:04:39 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '"\" align=\"left\" width=\"60\' (T_CONSTANT_ENCAPSED_STRING) in /home/donatourist/public_html/libraries/Helper.php on line 117
+[23-Jan-2024 14:05:30 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected '"\" align=\"left\" width=\"60\' (T_CONSTANT_ENCAPSED_STRING) in /home/donatourist/public_html/libraries/Helper.php on line 117
+[23-Jan-2024 14:23:05 Asia/Ho_Chi_Minh] PHP Parse error:  syntax error, unexpected ''assets/img/noimage.pn' (T_ENCAPSED_AND_WHITESPACE) in /home/donatourist/public_html/libraries/Helper.php on line 1307
