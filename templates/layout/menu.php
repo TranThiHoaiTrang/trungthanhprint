@@ -55,7 +55,6 @@
                     <input type="text" class="input" id="keyword" placeholder="Tìm kiếm ? ..." onkeypress="doEnter(event,'keyword');">
                     <button type="submit" value="" class="nut_tim" onclick="onSearch('keyword');"><i class="fas fa-search"></i></button>
                 </div>
-
             </div>
         </div>
     </div>

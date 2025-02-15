@@ -74,6 +74,39 @@
                     <!-- <div class="fb-comments" data-href="<?= $func->getCurrentPageURL() ?>" data-numposts="3" data-colorscheme="light" data-width="100%"></div> -->
                 </div>
             </div>
+
+            <?php if ($noidung_page != '') { ?>
+                <div class="wrap_bottom pt-0">
+                    <div class="fixwidth">
+                        <div class="entry-post">
+                            <div class="entry-left">
+                                <div class="contact_news">
+                                    <h1 class="name_tt_chitiet">
+                                        <?= $row_detail['ten' . $lang] ?>
+                                    </h1>
+                                    <div class="all_gioithieu_index" id="toc-content">
+                                        <?= htmlspecialchars_decode($noidung_page) ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="entry-right">
+                                <div class="meta-toc">
+                                    <div class="all_meta-toc">
+                                        <div class="toc_title">
+                                            MỤC LỤC
+                                            <span class="toc_toggle">[Ẩn]</span>
+                                        </div>
+                                        <div class="box-readmore">
+                                            <ul class="toc-list" data-toc="article" data-toc-headings="h1, h2, h3"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+
         </div>
     </div>
 </div>

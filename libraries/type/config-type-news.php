@@ -364,7 +364,7 @@ $nametype = "tin-tuc";
 $config['news'][$nametype]['title_main'] = "Tin tức";
 $config['news'][$nametype]['dropdown'] = true;
 $config['news'][$nametype]['list'] = true;
-$config['news'][$nametype]['cat'] = false;
+$config['news'][$nametype]['cat'] = true;
 $config['news'][$nametype]['check'] = array('noibat' => 'Nổi bật');
 $config['news'][$nametype]['view'] = true;
 $config['news'][$nametype]['slug'] = true;
@@ -395,14 +395,30 @@ $config['news'][$nametype]['check_list'] = array();
 $config['news'][$nametype]['gallery_list'] = array();
 $config['news'][$nametype]['mota_list'] = false;
 $config['news'][$nametype]['mota_cke_list'] = false;
-$config['news'][$nametype]['noidung_list'] = false;
-$config['news'][$nametype]['noidung_cke_list'] = false;
+$config['news'][$nametype]['noidung_list'] = true;
+$config['news'][$nametype]['noidung_cke_list'] = true;
 $config['news'][$nametype]['seo_list'] = true;
 $config['news'][$nametype]['width_list'] = 320;
 $config['news'][$nametype]['height_list'] = 240;
 $config['news'][$nametype]['thumb_list'] = '100x100x1';
 $config['news'][$nametype]['img_type_list'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
+/* Tin tức (List) */
+$config['news'][$nametype]['title_main_cat'] = "Danh mục cấp 2";
+$config['news'][$nametype]['images_cat'] = false;
+$config['news'][$nametype]['show_images_cat'] = false;
+$config['news'][$nametype]['slug_cat'] = true;
+$config['news'][$nametype]['check_cat'] = array();
+$config['news'][$nametype]['gallery_cat'] = array();
+$config['news'][$nametype]['mota_cat'] = false;
+$config['news'][$nametype]['mota_cke_cat'] = false;
+$config['news'][$nametype]['noidung_cat'] = true;
+$config['news'][$nametype]['noidung_cke_cat'] = true;
+$config['news'][$nametype]['seo_cat'] = true;
+$config['news'][$nametype]['width_cat'] = 320;
+$config['news'][$nametype]['height_cat'] = 240;
+$config['news'][$nametype]['thumb_cat'] = '100x100x1';
+$config['news'][$nametype]['img_type_cat'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
 /* tin tức */
 $nametype = "video";

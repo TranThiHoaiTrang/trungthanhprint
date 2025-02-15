@@ -2287,11 +2287,14 @@ span.glsr-bar-percent {
   position: relative;
   justify-content: space-evenly;
 }
+.menu_destop>ul li{
+  position: relative;
+}
 .menu_destop>ul>li.menu-item {
   transition: all ease-in-out 0.2s;
   position: relative;
 }
-.menu_destop>ul>li.menu-item a{
+.menu_destop>ul>li.menu-item>a{
   font-weight: 400;
   color: #000;
   display: block;
@@ -2305,6 +2308,17 @@ span.glsr-bar-percent {
   align-items: center;
   gap: 6px;
   margin-bottom: 6px;
+}
+.menu_destop>ul>li.menu-item>ul>li ul {
+  position: absolute;
+  display: none;
+  transition: all ease 0.5s;
+  left: 100%;
+  top: 0;
+  background: #fff;
+  border-radius: 10px;
+  z-index: 99;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, .1);
 }
 .menu_destop>ul>li.menu-item>ul {
   position: absolute;
@@ -2321,10 +2335,13 @@ span.glsr-bar-percent {
 .menu_destop>ul>li.menu-item:hover>ul{
   display: block;
 }
+.menu_destop > ul > li.menu-item:hover > ul > li.menu-item:hover > ul {
+  display: block;
+}
 .menu_destop>ul>li.menu-item>ul>li{
   width: 100%;
 }
-.menu_destop>ul>li.menu-item>ul>li>a{
+.menu_destop>ul>li.menu-item>ul li a{
   display: block;
   width: 100%;
   min-width: 220px;
