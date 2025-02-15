@@ -70,6 +70,10 @@ $linkSave = "index.php?com=product&act=save_cat&type=" . $type . "&p=" . $curPag
                                                         <textarea class="form-control for-seo <?= (isset($config['product'][$type]['noidung_cke_cat']) && $config['product'][$type]['noidung_cke_cat'] == true) ? 'ckeditor' : '' ?>" name="data[noidung<?= $k ?>]" id="noidung<?= $k ?>" rows="5" placeholder="Nội dung (<?= $k ?>)"><?= htmlspecialchars_decode(@$item['noidung' . $k]) ?></textarea>
                                                     </div>
                                                 <?php } ?>
+                                                <div class="form-group">
+                                                    <label for="schema">Schema:</label>
+                                                    <textarea class="form-control" name="data[schema]" id="schema" rows="8" placeholder="Schema"><?= htmlspecialchars_decode(@$item['schema']) ?></textarea>
+                                                </div>
                                             </div>
                                         <?php } ?>
                                     </div>

@@ -137,6 +137,10 @@ if (isset($config['static'][$type]['gallery']) && count($config['static'][$type]
                                                             <textarea class="form-control for-seo <?= (isset($config['static'][$type]['noidung_cke']) && $config['static'][$type]['noidung_cke'] == true) ? 'ckeditor' : '' ?>" name="data[noidung<?= $k ?>]" id="noidung<?= $k ?>" rows="5" placeholder="Nội dung (<?= $k ?>)"><?= htmlspecialchars_decode(@$item['noidung' . $k]) ?></textarea>
                                                         </div>
                                                     <?php } ?>
+                                                    <div class="form-group">
+                                                        <label for="schema">Schema:</label>
+                                                        <textarea class="form-control" name="data[schema]" id="schema" rows="8" placeholder="Schema"><?= htmlspecialchars_decode(@$item['schema']) ?></textarea>
+                                                    </div>
                                                 </div>
                                             <?php } ?>
                                         </div>
