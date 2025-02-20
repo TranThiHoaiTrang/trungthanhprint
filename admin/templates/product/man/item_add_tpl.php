@@ -336,6 +336,13 @@ if ((isset($config['product'][$type]['dropdown']) && $config['product'][$type]['
 														<input type="text" class="form-control for-seo" name="data[title_phu<?= $k ?>]" id="title_phu<?= $k ?>" placeholder="Nhập tiêu đề phụ (<?= $k ?>)" value="<?= @$item['title_phu' . $k] ?>">
 													</div>
 												<?php } ?>
+												<?php if (isset($config['product'][$type]['link_video']) && $config['product'][$type]['link_video'] == true && $k == 'vi') { ?>
+													<div class="form-group">
+														<label for="link_video">Link video:</label>
+														<input type="text" class="form-control for-seo" name="data[link_video]" id="chatlieu" placeholder="Nhập link video" value="<?= @$item['link_video'] ?>">
+														<!-- <textarea class="form-control" name="data[link_video]" id="link_video" rows="5" placeholder="Link video"><?= htmlspecialchars_decode(@$item['link_video']) ?></textarea> -->
+													</div>
+												<?php } ?>
 												<?php if (isset($config['product'][$type]['chatlieu']) && $config['product'][$type]['chatlieu'] == true && $k == 'vi') { ?>
 													<div class="form-group">
 														<label for="chatlieu">Chất liệu:</label>
@@ -628,91 +635,6 @@ if ((isset($config['product'][$type]['dropdown']) && $config['product'][$type]['
 									</div>
 								<?php } ?>
 							</div>
-							<!-- <div class="row">
-								<?php if (isset($config['product'][$type]['size']) && $config['product'][$type]['size'] == true) { ?>
-									<?php
-									$dem = -1;
-									$demmau = -1;
-									$temps = $d->rawQueryOne("select id_size from #_product where id = ? and type = ? limit 0,1", array($id, $type));
-									$all_id_size = explode(',', $temps['id_size']);
-									foreach ($all_id_size as $v) {
-									?>
-										<?php
-										$all_giasize_product = $d->rawQueryOne("select giasize from #_product where id = ? and type = ? limit 0,1", array($id, $type));
-										$giasizeproduct = explode('/', $all_giasize_product['giasize']);
-										$dem += 1;
-										$giasizeproduct = explode('_', $giasizeproduct[$dem]);
-										?>
-										<div class="form-group col-md-12">
-											<?php
-											$id_size = $v;
-											$sizesanpham = $d->rawQueryOne("select tenvi from #_product_size where id = '$id_size' limit 0,1");
-											?>
-											<label class="d-block mb-3" for="giasize">Giá size <?= $sizesanpham['tenvi'] ?>:</label>
-											<span class="mb-2 mt-2 d-block">Gia <?= $sizesanpham['tenvi'] ?></span>
-											<div class="input-group">
-												<input type="hidden" value="<?= $v ?>" name="idsize[]">
-												<input type="text" class="form-control format-price gia_size" name="giasize[]" id="giasize" placeholder="Giá size" value="<?= $giasizeproduct[1] ?>">
-												<div class="input-group-append">
-													<div class="input-group-text"><strong>₩</strong></div>
-												</div>
-											</div>
-										</div>
-
-										<div class="row">
-											<?php
-											$temps_mau = $d->rawQueryOne("select id_mau from #_product where id = ? and type = ? limit 0,1", array($id, $type));
-											$all_id_mau = explode(',', $temps_mau['id_mau']);
-											foreach ($all_id_mau as $m) {
-											?>
-												<?php
-												$all_giamau_product = $d->rawQueryOne("select giamau from #_product where id = ? and type = ? limit 0,1", array($id, $type));
-												$giamauproduct = explode('/', $all_giamau_product['giamau']);
-												$demmau += 1;
-												$giamauproduct = explode('_', $giamauproduct[$demmau]);
-												if ($giamauproduct[0] == $v) {
-												?>
-													<div class="form-group col-md-6">
-														<?php
-														$id_mau = $m;
-														$mausanpham = $d->rawQueryOne("select tenvi from #_product_mau where id = '$id_mau' limit 0,1");
-														?>
-														<label class="d-block mb-3" for="giasize">Giá size <?= $mausanpham['tenvi'] ?>:</label>
-														<span class="mb-2 mt-2 d-block">Gia <?= $mausanpham['tenvi'] ?></span>
-														<div class="input-group">
-															<input type="hidden" value="<?= $v ?>" name="idsize_mau[]">
-															<input type="hidden" value="<?= $m ?>" name="idmau[]">
-															<input type="text" class="form-control format-price gia_size" name="giamau[]" id="giamau" placeholder="Giá size" value="<?= $giamauproduct[2] ?>">
-															<div class="input-group-append">
-																<div class="input-group-text"><strong>₩</strong></div>
-															</div>
-														</div>
-													</div>
-												<?php } else { ?>
-													<div class="form-group col-md-6">
-														<?php
-														$id_mau = $m;
-														$mausanpham = $d->rawQueryOne("select tenvi from #_product_mau where id = '$id_mau' limit 0,1");
-														?>
-														<label class="d-block mb-3" for="giasize">Giá size <?= $mausanpham['tenvi'] ?>:</label>
-														<span class="mb-2 mt-2 d-block">Gia <?= $mausanpham['tenvi'] ?></span>
-														<div class="input-group">
-															<input type="hidden" value="<?= $v ?>" name="idsize_mau[]">
-															<input type="hidden" value="<?= $m ?>" name="idmau[]">
-															<input type="text" class="form-control format-price gia_size" name="giamau[]" id="giamau" placeholder="Giá size" value="0">
-															<div class="input-group-append">
-																<div class="input-group-text"><strong>₩</strong></div>
-															</div>
-														</div>
-													</div>
-												<?php } ?>
-											<?php } ?>
-										</div>
-
-									<?php } ?>
-
-								<?php } ?>
-							</div> -->
 						</div>
 					</div>
 					<?php if (isset($flagGallery) && $flagGallery == true) { ?>

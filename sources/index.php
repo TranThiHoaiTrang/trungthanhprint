@@ -18,7 +18,7 @@
     $img_json_bar = (isset($logo['options']) && $logo['options'] != '') ? json_decode($logo['options'],true) : null;
     if($img_json_bar == null || ($img_json_bar['p'] != $logo['photo']))
     {
-        $img_json_bar = $func->getImgSize($logo['photo'],UPLOAD_PHOTO_L.$logo['photo']);
+        $img_json_bar = $func->getImgSize($logo['photo'],Helper::thumbnail_link($logo['photo']));
         $seo->updateSeoDB(json_encode($img_json_bar),'photo',$logo['id']);
     }
     if(count($img_json_bar) > 0)

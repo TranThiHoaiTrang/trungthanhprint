@@ -60,6 +60,18 @@ $linkSave = "index.php?com=product&act=save_item&type=" . $type . "&p=" . $curPa
                                                     <label for="ten<?= $k ?>">Tiêu đề (<?= $k ?>):</label>
                                                     <input type="text" class="form-control for-seo" name="data[ten<?= $k ?>]" id="ten<?= $k ?>" placeholder="Tiêu đề (<?= $k ?>)" value="<?= @$item['ten' . $k] ?>" <?= ($k == 'vi') ? 'required' : '' ?>>
                                                 </div>
+                                                <?php if (isset($config['product'][$type]['title_phu']) && $config['product'][$type]['title_phu'] == true && $k == 'vi') { ?>
+													<div class="form-group">
+														<label for="title_phu<?= $k ?>">Tiêu đề phụ (H1) (<?= $k ?>):</label>
+														<input type="text" class="form-control for-seo" name="data[title_phu<?= $k ?>]" id="title_phu<?= $k ?>" placeholder="Nhập tiêu đề phụ (<?= $k ?>)" value="<?= @$item['title_phu' . $k] ?>">
+													</div>
+												<?php } ?>
+                                                <?php if (isset($config['product'][$type]['motangan_item']) && $config['product'][$type]['motangan_item'] == true) { ?>
+                                                    <div class="form-group">
+                                                        <label for="motangan<?= $k ?>">Mô tả ngắn (<?= $k ?>):</label>
+                                                        <textarea class="form-control for-seo <?= (isset($config['product'][$type]['motangan_cke_item']) && $config['product'][$type]['motangan_cke_item'] == true) ? 'ckeditor' : '' ?>" name="data[motangan<?= $k ?>]" id="motangan<?= $k ?>" rows="5" placeholder="Mô tả ngắn (<?= $k ?>)"><?= htmlspecialchars_decode(@$item['motangan' . $k]) ?></textarea>
+                                                    </div>
+                                                <?php } ?>
                                                 <?php if (isset($config['product'][$type]['mota_item']) && $config['product'][$type]['mota_item'] == true) { ?>
                                                     <div class="form-group">
                                                         <label for="mota<?= $k ?>">Mô tả (<?= $k ?>):</label>

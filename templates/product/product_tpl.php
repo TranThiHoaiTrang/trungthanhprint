@@ -4,49 +4,49 @@
             <div class="breadCrumbs">
                 <div><?= $breadcrumbs ?></div>
             </div>
-            <div class="bread_title"><?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></div>
+            <!-- <div class="bread_title"></?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></div> -->
         </div>
     </div>
 </div>
 <div class="all_banner_page">
     <div class="fixwidth">
-        <?php if (!empty($idl)) { ?>
+        <?php if (!empty($pro_seo)) { ?>
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <div class="noidung_banner_page">
-                        <?= htmlspecialchars_decode($pro_list['mota' . $lang]) ?>
-                    </div>
+                    <h1 class="noidung_banner_page">
+                        <?= htmlspecialchars_decode($pro_seo['title_phu' . $lang]) ?>
+                    </h1>
                     <div class="mota_banner_page">
-                        <?= htmlspecialchars_decode($pro_list['motangan' . $lang]) ?>
+                        <?= htmlspecialchars_decode($pro_seo['motangan' . $lang]) ?>
                     </div>
-                    <a href="san-pham">
+                    <!-- <a href="san-pham">
                         <div class="xemthem_gioithieu">
                             <div class="icon_xt"><i class="fas fa-arrow-right"></i></div>
                             <span>Khám phá ngay</span>
                         </div>
-                    </a>
+                    </a> -->
                 </div>
                 <div class="col-md-6">
                     <div class="img_banner_page">
-                        <?= Helper::the_thumbnail($pro_list['photo1'], '', $pro_list['ten' . $lang], true) ?>
+                        <?= Helper::the_thumbnail($pro_seo['photo'], '', $pro_seo['ten' . $lang], true) ?>
                     </div>
                 </div>
             </div>
         <?php } else { ?>
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <div class="noidung_banner_page">
+                    <h1 class="noidung_banner_page">
                         <?= htmlspecialchars_decode($seopage['noidung' . $lang]) ?>
-                    </div>
+                    </h1>
                     <div class="mota_banner_page">
                         <?= htmlspecialchars_decode($seopage['mota' . $lang]) ?>
                     </div>
-                    <a href="san-pham">
+                    <!-- <a href="san-pham">
                         <div class="xemthem_gioithieu">
                             <div class="icon_xt"><i class="fas fa-arrow-right"></i></div>
                             <span>Khám phá ngay</span>
                         </div>
-                    </a>
+                    </a> -->
                 </div>
                 <div class="col-md-6">
                     <div class="img_banner_page">
@@ -62,7 +62,7 @@
     <div class="fixwidth">
         <div class="content-main w-clear">
             <div class="site-content">
-                <?php if (!empty($idl)) { ?>
+                <?php if (!empty($pro_seo)) { ?>
                     <div class="row">
                         <div class="col-md-3">
                             <?php include LAYOUT_PATH . "right-sanpham.php"; ?>
@@ -128,9 +128,6 @@
                             <div class="entry-post">
                                 <div class="entry-left">
                                     <div class="contact_news">
-                                        <h1 class="name_tt_chitiet">
-                                            <?= $row_detail['ten' . $lang] ?>
-                                        </h1>
                                         <div class="all_gioithieu_index" id="toc-content">
                                         <?= htmlspecialchars_decode($noidung_page) ?>
                                         </div>

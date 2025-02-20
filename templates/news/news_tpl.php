@@ -4,19 +4,19 @@
             <div class="breadCrumbs">
                 <div><?= $breadcrumbs ?></div>
             </div>
-            <div class="bread_title"><?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></div>
+            <h1 class="bread_title"><?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></h1>
         </div>
     </div>
 </div>
-<div class="all_banner_page">
+<!-- <div class="all_banner_page">
     <div class="fixwidth">
         <div class="row align-items-center">
             <div class="col-md-6">
                 <div class="noidung_banner_page">
-                    <?= htmlspecialchars_decode($seopage['noidung' . $lang]) ?>
+                    </?= htmlspecialchars_decode($seopage['noidung' . $lang]) ?>
                 </div>
                 <div class="mota_banner_page">
-                    <?= htmlspecialchars_decode($seopage['mota' . $lang]) ?>
+                    </?= htmlspecialchars_decode($seopage['mota' . $lang]) ?>
                 </div>
                 <a href="san-pham">
                     <div class="xemthem_gioithieu">
@@ -27,12 +27,12 @@
             </div>
             <div class="col-md-6">
                 <div class="img_banner_page">
-                    <?= Helper::the_thumbnail($seopage['photo'], '', $seopage['ten' . $lang], true) ?>
+                    </?= Helper::the_thumbnail($seopage['photo'], '', $seopage['ten' . $lang], true) ?>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="pt-5 pb-5" style="background: #F1F6F8;">
     <div class="fixwidth">
         <div class="content-main w-clear">
@@ -81,9 +81,6 @@
                         <div class="entry-post">
                             <div class="entry-left">
                                 <div class="contact_news">
-                                    <h1 class="name_tt_chitiet">
-                                        <?= $row_detail['ten' . $lang] ?>
-                                    </h1>
                                     <div class="all_gioithieu_index" id="toc-content">
                                         <?= htmlspecialchars_decode($noidung_page) ?>
                                     </div>

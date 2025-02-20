@@ -1,14 +1,14 @@
-<div class="mb-5 mt-5 all_breadCrumbs">
+<div class="mb-4 mt-5 all_breadCrumbs">
     <div class="fixwidth">
         <div class="all_bread d-flex">
             <div class="breadCrumbs">
                 <div><?= $breadcrumbs ?></div>
             </div>
-            <div class="bread_title"><?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></div>
+            <!-- <div class="bread_title"></?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></div> -->
         </div>
     </div>
 </div>
-<div class="all_banner_page">
+<!-- <div class="all_banner_page">
     <div class="fixwidth">
         <div class="row align-items-center">
             <div class="col-md-6">
@@ -32,7 +32,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="content-main">
     <div class="fixwidth">
         <div class="all_gioithieu_index all_gioithieu_index_noidung pt-5">

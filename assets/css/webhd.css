@@ -442,16 +442,16 @@
   border: 1px solid #E0E0E0;
   border-radius: 15px;
   background: #fff;
-  padding: 20px;
+  /* padding: 20px; */
 }
 .img_sp_dm_nb_index {
   overflow: hidden;
-  background: radial-gradient(50% 50% at 50% 50%, #F6F6F6 0%, #F5F5F5 100%);
+  /* background: radial-gradient(50% 50% at 50% 50%, #F6F6F6 0%, #F5F5F5 100%); */
   border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  /* padding: 30px; */
 }
 .img_sp_dm_nb_index img {
   width: 100%;
@@ -461,10 +461,11 @@
   border-radius: 20px;
 }
 .content_sp_dm_nb_index {
-  margin-top: 25px;
+  /* margin-top: 25px; */
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 20px;
 }
 .name_sp_dm_nb_index {
   font-size: 16px;
@@ -2338,11 +2339,14 @@ span.glsr-bar-percent {
 .menu_destop > ul > li.menu-item:hover > ul > li.menu-item:hover > ul {
   display: block;
 }
+.menu_destop > ul > li.menu-item > ul > li.menu-item > ul > li.menu-item:hover > ul{
+  display: block;
+}
 .menu_destop>ul>li.menu-item>ul>li{
   width: 100%;
 }
 .menu_destop>ul>li.menu-item>ul li a{
-  display: block;
+  display: flex;
   width: 100%;
   min-width: 220px;
   font-size: 14px;
@@ -2354,6 +2358,8 @@ span.glsr-bar-percent {
   position: relative;
   margin: 0px;
   color: #000;
+  align-items: center;
+  justify-content: space-between;
 }
 .icon_down i {
   font-weight: 400;
@@ -2379,4 +2385,16 @@ span.glsr-bar-percent {
 }
 .all_menu_footer p {
   width: 100%;
+}
+.thumb-pro-detail-video::before{
+  content: ''; 
+  background: url('../images/img-data/play.png') no-repeat; 
+  background-size: 100% 100%; 
+  width: 45px; 
+  height: 45px; 
+  position: absolute; 
+  left: 50%; 
+  top: 50%; 
+  transform: translate(-50%,-50%); 
+  z-index: 9
 }

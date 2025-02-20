@@ -363,6 +363,9 @@ final class Helper
             }
 
             $results .= '<span>' . $item['ten' . $lang] . '</span>';
+            if($item['children']){
+                $results .= '<div class="icon_down"><i class="fas fa-angle-down"></i></div>';
+            }
             $results .= '</a>';
 
             $children_tmp = $item['children'] ?? null;

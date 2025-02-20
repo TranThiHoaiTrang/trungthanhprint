@@ -4,7 +4,7 @@
             <div class="breadCrumbs">
                 <div><?= $breadcrumbs ?></div>
             </div>
-            <div class="bread_title"><?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></div>
+            <!-- <div class="bread_title"></?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></div> -->
         </div>
     </div>
 </div>
@@ -13,27 +13,27 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <?php if ($row_detail['type'] == 'tac-gia') { ?>
-                    <div class="noidung_banner_page">
+                    <h1 class="noidung_banner_page">
                         <?= htmlspecialchars_decode($row_detail['ten' . $lang]) ?>
-                    </div>
+                    </h1>
                 <?php } else { ?>
-                    <div class="noidung_banner_page">
-                        <?= htmlspecialchars_decode($row_detail['mota' . $lang]) ?>
-                    </div>
+                    <h1 class="noidung_banner_page">
+                        <?= htmlspecialchars_decode($row_detail['title_phu' . $lang]) ?>
+                    </h1>
                 <?php } ?>
                 <div class="mota_banner_page">
                     <?= htmlspecialchars_decode($row_detail['motangan' . $lang]) ?>
                 </div>
-                <a href="san-pham">
+                <!-- <a href="san-pham">
                     <div class="xemthem_gioithieu">
                         <div class="icon_xt"><i class="fas fa-arrow-right"></i></div>
                         <span>Khám phá ngay</span>
                     </div>
-                </a>
+                </a> -->
             </div>
             <div class="col-md-6">
                 <div class="img_banner_page">
-                    <?= Helper::the_thumbnail($row_detail['photo1'], '', $row_detail['ten' . $lang], true) ?>
+                    <?= Helper::the_thumbnail($row_detail['photo'], '', $row_detail['ten' . $lang], true) ?>
                 </div>
             </div>
         </div>
@@ -45,9 +45,6 @@
             <div class="entry-post">
                 <div class="entry-left">
                     <div class="contact_news">
-                        <h1 class="name_tt_chitiet">
-                            <?= $row_detail['title_phu' . $lang] ?>
-                        </h1>
                         <div class="all_gioithieu_index" id="toc-content">
                             <?= (isset($row_detail['noidung' . $lang]) && $row_detail['noidung' . $lang] != '') ? htmlspecialchars_decode($row_detail['noidung' . $lang]) : '' ?>
                         </div>

@@ -295,11 +295,11 @@ $seo->setSeo('url', $func->getPageURL());
 $img_json_bar = (isset($seopage['options']) && $seopage['options'] != '') ? json_decode($seopage['options'], true) : null;
 if (!empty($seopage['photo'])) {
 	if ($img_json_bar == null || ($img_json_bar['p'] != $seopage['photo'])) {
-		$img_json_bar = $func->getImgSize($seopage['photo'], UPLOAD_SEOPAGE_L . $seopage['photo']);
+		$img_json_bar = $func->getImgSize($seopage['photo'], Helper::thumbnail_link($seopage['photo']));
 		$seo->updateSeoDB(json_encode($img_json_bar), 'seopage', $seopage['id']);
 	}
 	if (count($img_json_bar) > 0) {
-		$seo->setSeo('photo', $config_base . THUMBS . '/' . $img_json_bar['w'] . 'x' . $img_json_bar['h'] . 'x2/' . UPLOAD_SEOPAGE_L . $seopage['photo']);
+		$seo->setSeo('photo', Helper::thumbnail_link($seopage['photo']));
 		$seo->setSeo('photo:width', $img_json_bar['w']);
 		$seo->setSeo('photo:height', $img_json_bar['h']);
 		$seo->setSeo('photo:type', $img_json_bar['m']);

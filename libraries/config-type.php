@@ -1,32 +1,19 @@
 <?php
 /* Config type - Group */
 $config['group'] = array(
-    /*"Group Sản Phẩm" => array(
-            "product" => array("san-pham"),
-            //"tags" => array("san-pham"),
-            //"static" => array("gioi-thieu-san-pham"),
-            //"photo" => array("slide-product"),
-            //"photo_static" => array("watermark"),
-            //"newsletter" => array("dangkybaogia")
-        ),*/
     "Nội dung tại sao chọn" => array(
         "news" => array("ly-do", "nhung-con-so"),
         "static" => array("taisaochon"),
-        //"newsletter" => array("dangkytuyendung")
     ),
     "Nội dung báo chí" => array(
         "photo" => array("baochi"),
         "static" => array("noidung-baochi"),
-        //"newsletter" => array("dangkytuyendung")
     ),
     "Trang giới thiệu" => array(
         "static" => array("gioi-thieu"),
         "photo" => array("khachhang-tieubieu"),
         "news" => array("cosohatang", "doingu-nhanvien", "quatrinh-hinhthanh", "tamnhan-sumenh", "linhvuc-hoatdong", "khach-hang"),
     ),
-    // "Quản lý fanpage" => array(
-    //     "static" => array("fanpage"),
-    // ),
     "Xây dựng nội dung" => array(
         "static" => array("xaydung-noidung"),
     )
@@ -61,7 +48,7 @@ $config['seopage']['page'] = array(
     "gioi-thieu" => "Giới thiệu",
     "lien-he" => "Liên hệ",
     "san-pham" => "Sản phẩm",
-    "dich-vu" => "Dịch vụ",
+    // "dich-vu" => "Dịch vụ",
     "chinh-sach" => "Chính sách",
     "tin-tuc" => "Tin tức",
     "tac-gia" => "Tác giả",

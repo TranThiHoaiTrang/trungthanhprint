@@ -56,7 +56,6 @@ if (is_array($match)) {
 	} else {
 
 		if (isset($match['params']['action'])) {
-			var_dump(htmlspecialchars($match['params']['action']));
 			$com = (isset($match['params']['action'])) ? htmlspecialchars($match['params']['action']) : htmlspecialchars($match['target']);
 		} else {
 			$com = (isset($match['params']['com'])) ? htmlspecialchars($match['params']['com']) : htmlspecialchars($match['target']);
@@ -162,7 +161,7 @@ switch ($com) {
 
 	case 'trang-tinh':
 		$source = "news";
-		$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+		$template = isset($_GET['id']) ? "trangtinh/news_detail" : "trangtinh/news";
 		$seo->setSeo('type', isset($_GET['id']) ? "article" : "object");
 		$type = $com;
 		$title_crumb = "Trang tĩnh";
@@ -192,13 +191,13 @@ switch ($com) {
 		$title_crumb = "Chính sách";
 		break;
 
-	case 'dich-vu':
-		$source = "news";
-		$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
-		$seo->setSeo('type', isset($_GET['id']) ? "article" : "object");
-		$type = $com;
-		$title_crumb = "Dịch vụ";
-		break;
+	// case 'dich-vu':
+	// 	$source = "news";
+	// 	$template = isset($_GET['id']) ? "news/news_detail" : "news/news";
+	// 	$seo->setSeo('type', isset($_GET['id']) ? "article" : "object");
+	// 	$type = $com;
+	// 	$title_crumb = "Dịch vụ";
+	// 	break;
 
 	case 'san-pham':
 		$source = "product";

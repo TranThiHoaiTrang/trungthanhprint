@@ -76,6 +76,12 @@ if ((isset($config['product'][$type]['images_list']) && $config['product'][$type
                                                     <label for="ten<?= $k ?>">Tiêu đề (<?= $k ?>):</label>
                                                     <input type="text" class="form-control for-seo" name="data[ten<?= $k ?>]" id="ten<?= $k ?>" placeholder="Tiêu đề (<?= $k ?>)" value="<?= @$item['ten' . $k] ?>" <?= ($k == 'vi') ? 'required' : '' ?>>
                                                 </div>
+                                                <?php if (isset($config['product'][$type]['title_phu']) && $config['product'][$type]['title_phu'] == true && $k == 'vi') { ?>
+													<div class="form-group">
+														<label for="title_phu<?= $k ?>">Tiêu đề phụ (H1) (<?= $k ?>):</label>
+														<input type="text" class="form-control for-seo" name="data[title_phu<?= $k ?>]" id="title_phu<?= $k ?>" placeholder="Nhập tiêu đề phụ (<?= $k ?>)" value="<?= @$item['title_phu' . $k] ?>">
+													</div>
+												<?php } ?>
                                                 <?php if (isset($config['product'][$type]['motangan_list']) && $config['product'][$type]['motangan_list'] == true) { ?>
                                                     <div class="form-group">
                                                         <label for="motangan<?= $k ?>">Mô tả ngắn (<?= $k ?>):</label>

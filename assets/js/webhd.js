@@ -170,3 +170,55 @@ jQuery(function ($) {
       });
   });
 });
+
+function showImageInMain(imageUrl, altText) {
+  var zoomContainer = document.getElementById('Zoom-1');
+  if (zoomContainer) {
+      MagicZoom.stop('Zoom-1'); // Dừng MagicZoom trước khi thay đổi nội dung
+
+      // Xóa toàn bộ nội dung cũ trong container
+      while (zoomContainer.firstChild) {
+          zoomContainer.removeChild(zoomContainer.firstChild);
+      }
+
+      // Kiểm tra URL có chứa 'youtube.com/embed' hay không
+      if (imageUrl.includes('youtube.com/embed')) {
+          zoomContainer.setAttribute('href', imageUrl);
+          zoomContainer.setAttribute('data-type', 'iframe'); // Đảm bảo hiển thị dưới dạng iframe
+      } else {
+          // Nếu là ảnh, xử lý như bình thường
+          zoomContainer.setAttribute('href', imageUrl);
+      }
+
+      // Tạo và thêm ảnh vào `zoomContainer` để hiển thị trước khi click
+      var img = document.createElement('img');
+      img.src = imageUrl;
+      img.alt = altText;
+      img.onerror = function() {
+          this.src = '<?= Helper::noimage() ?>';
+      };
+      zoomContainer.appendChild(img);
+
+      // Làm mới MagicZoom sau khi thay đổi nội dung
+      MagicZoom.refresh('Zoom-1');
+  }
+}
+
+function playVideoOnMain(videoId) {
+  var zoomContainer = document.getElementById('Zoom-1');
+  if (zoomContainer) {
+      // Xóa nội dung cũ
+      zoomContainer.innerHTML = '';
+
+      // Tạo iframe YouTube
+      var iframe = document.createElement('iframe');
+      iframe.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
+      iframe.width = "100%";
+      iframe.height = "500px"; // Điều chỉnh chiều cao theo ý bạn
+      iframe.allow = "autoplay; encrypted-media";
+      iframe.frameBorder = "0";
+
+      // Thêm iframe vào container
+      zoomContainer.appendChild(iframe);
+  }
+}

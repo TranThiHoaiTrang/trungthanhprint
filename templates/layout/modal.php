@@ -56,7 +56,7 @@
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLongTitle">RATING</h5>
+				<div class="modal-title" id="exampleModalLongTitle">RATING</div>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -66,7 +66,7 @@
 					<input type="hidden" name="id_product" value="<?= $row_detail['id'] ?>">
 					<input type="hidden" name="start" class="start" value="0">
 					<div class="rating-system">
-						<h4>Đánh giá</h4>
+						<div>Đánh giá</div>
 						<div class="rating--inner ">
 							<div class="rating">
 								<ul>

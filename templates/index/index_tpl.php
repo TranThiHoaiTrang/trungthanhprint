@@ -72,7 +72,7 @@
         <div class="row align-items-center">
             <div class="col-md-4 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" >
                 <div class="all_content_gioithieu">
-                    <div class="mota_ngan_gioithieu"><?= htmlspecialchars_decode($gioithieu['motangan' . $lang]) ?></div>
+                    <h2 class="mota_ngan_gioithieu"><?= htmlspecialchars_decode($gioithieu['motangan' . $lang]) ?></h2>
                     <div class="mota_gioithieu"><?= htmlspecialchars_decode($gioithieu['mota' . $lang]) ?></div>
                     <a href="gioi-thieu">
                         <div class="xemthem_gioithieu">
@@ -98,10 +98,10 @@
 <div class="wrap_sanpham">
     <div class="fixwidth">
         <div class="all_title_dm_sanpham">
-            <div class="title_dm_sanpham">
+            <h2 class="title_dm_sanpham">
                 <span>Danh mục</span>
                 <span>sản phẩm</span>
-            </div>
+            </h2>
             <div class="mota_dm_sanpham">
                 Nibh venenatis cras sed felis. Rhoncus est pellentesque elit ullamcorper <br>
                 dignissim cras tincidunt lobortis.
@@ -127,10 +127,10 @@
 <div class="wrap_sanpham_nb">
     <div class="fixwidth">
         <div class="all_title_dm_nb">
-            <div class="title_dm_nb">
+            <h2 class="title_dm_nb">
                 <span>Sản phẩm</span>
                 <span>nổi bật</span>
-            </div>
+            </h2>
         </div>
     </div>
     <div class="all_dm_nb_index">
@@ -187,10 +187,10 @@
 <div class="wrap_bottom" style="background: #FEFBEA;">
     <div class="fixwidth">
         <div class="all_title_dm_sanpham">
-            <div class="title_dm_sanpham">
+            <h2 class="title_dm_sanpham">
                 <span>Tại sao chọn</span>
                 <span>Trung Thành Print</span>
-            </div>
+            </h2>
             <div class="mota_dm_sanpham">
                 <?= htmlspecialchars_decode($taisaochon['mota' . $lang]) ?>
             </div>
@@ -253,16 +253,16 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <div class="title_baochi"><?= htmlspecialchars_decode($noidungbaochi['mota' . $lang]) ?></div>
+                <h2 class="title_baochi"><?= htmlspecialchars_decode($noidungbaochi['mota' . $lang]) ?></h2>
                 <div class="noidung_baochi"><?= htmlspecialchars_decode($noidungbaochi['noidung' . $lang]) ?></div>
             </div>
         </div>
         <div class="all_video_title_index all_title_video">
             <div class="all_title_dm_sanpham">
-                <div class="title_dm_sanpham">
+                <h2 class="title_dm_sanpham">
                     <span>Video nhà xưởng</span>
                     <span>Trung Thành Print</span>
-                </div>
+                </h2>
             </div>
             <div class="all_video_index aos-init aos-animate" data-aos="zoom-in" data-aos-duration="800">
                 <p class="control-social prev-social transition"><i class="fas fa-arrow-left"></i></p>
@@ -290,10 +290,10 @@
         <a href="tin-tuc">
             <div class="all_title_xemthem_index">
                 <div class="all_title_tintuc_index">
-                    <div class="title_tintuc_index">
+                    <h2 class="title_tintuc_index">
                         <span>Tin tức</span>
                         <span>nổi bật</span>
-                    </div>
+                    </h2>
                     <hr>
                     <div class="mota_tintuc_index">
                         Discover our most requested packaging products for your bussiness.

@@ -753,6 +753,9 @@ input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-
     border: 1px solid #DDDDDD;
     border-radius: 10px;
     padding: 20px;
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 .left-pro-detail .MagicZoom figure{width: 100%;}
 .left-pro-detail .MagicZoom figure img{}
@@ -774,6 +777,7 @@ input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-
     color: #000;
     font-size: 20px;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 .social-plugin-pro-detail{margin-bottom:5px;margin-top:0px!important;}
 .desc-pro-detail{

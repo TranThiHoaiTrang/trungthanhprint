@@ -42,7 +42,7 @@ $linkSave = "index.php?com=seopage&act=save&type=" . $_GET['type'];
                 ?>
             </div>
         </div>
-        <div class="card card-primary card-outline text-sm">
+        <!-- <div class="card card-primary card-outline text-sm">
             <div class="card-header">
                 <h3 class="card-title">banner <?= $config['product'][$type]['title_main'] ?></h3>
                 <div class="card-tools">
@@ -51,7 +51,7 @@ $linkSave = "index.php?com=seopage&act=save&type=" . $_GET['type'];
             </div>
             <div class="card-body">
 
-                <?php
+                </?php
 
                 $table_name = 'seopage';
 
@@ -63,7 +63,7 @@ $linkSave = "index.php?com=seopage&act=save&type=" . $_GET['type'];
 
                 ?>
             </div>
-        </div>
+        </div> -->
         <div class="card card-primary card-outline text-sm">
             <div class="card-header">
                 <h3 class="card-title">Nội dung <?= $config['product'][$type]['title_main'] ?></h3>

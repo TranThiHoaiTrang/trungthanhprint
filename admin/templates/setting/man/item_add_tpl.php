@@ -242,6 +242,10 @@
 					<label for="bodyjs">Body JS:</label>
 					<textarea class="form-control" name="data[bodyjs]" id="bodyjs" rows="5" placeholder="Body JS"><?=htmlspecialchars_decode(@$item['bodyjs'])?></textarea>
 				</div>
+				<div class="form-group">
+					<label for="schema">Schema:</label>
+					<textarea class="form-control" name="data[schema]" id="schema" rows="5" placeholder="Schema"><?=htmlspecialchars_decode(@$item['schema'])?></textarea>
+				</div>
 				<div class="card card-primary card-outline card-outline-tabs">
 					<div class="card-header p-0 border-bottom-0">
 						<ul class="nav nav-tabs" id="custom-tabs-three-tab-lang" role="tablist">

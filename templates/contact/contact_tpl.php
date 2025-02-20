@@ -4,7 +4,7 @@
             <div class="breadCrumbs">
                 <div><?= $breadcrumbs ?></div>
             </div>
-            <div class="bread_title"><?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></div>
+            <!-- <div class="bread_title"></?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></div> -->
         </div>
     </div>
 </div>
@@ -12,9 +12,9 @@
     <div class="fixwidth">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <div class="noidung_banner_page">
+                <h1 class="noidung_banner_page">
                     <?= htmlspecialchars_decode($seopage['noidung' . $lang]) ?>
-                </div>
+                </h1>
                 <div class="mota_banner_page">
                     <?= htmlspecialchars_decode($seopage['mota' . $lang]) ?>
                 </div>

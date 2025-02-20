@@ -61,12 +61,12 @@
 		$img_json_bar = (isset($row_detail['options']) && $row_detail['options'] != '') ? json_decode($row_detail['options'],true) : null;
 		if($img_json_bar == null || ($img_json_bar['p'] != $row_detail['photo']))
 		{
-			$img_json_bar = $func->getImgSize($row_detail['photo'],UPLOAD_NEWS_L.$row_detail['photo']);
+			$img_json_bar = $func->getImgSize($row_detail['photo'],Helper::thumbnail_link($row_detail['photo']));
 			$seo->updateSeoDB(json_encode($img_json_bar),'news',$row_detail['id']);
 		}
 		if(count($img_json_bar) > 0)
 		{
-			$seo->setSeo('photo',$config_base.THUMBS.'/'.$img_json_bar['w'].'x'.$img_json_bar['h'].'x2/'.UPLOAD_NEWS_L.$row_detail['photo']);
+			$seo->setSeo('photo',Helper::thumbnail_link($row_detail['photo']));
 			$seo->setSeo('photo:width',$img_json_bar['w']);
 			$seo->setSeo('photo:height',$img_json_bar['h']);
 			$seo->setSeo('photo:type',$img_json_bar['m']);
@@ -99,12 +99,12 @@
 		$img_json_bar = (isset($news_list['options']) && $news_list['options'] != '') ? json_decode($news_list['options'],true) : null;
 		if($img_json_bar == null || ($img_json_bar['p'] != $news_list['photo']))
 		{
-			$img_json_bar = $func->getImgSize($news_list['photo'],UPLOAD_NEWS_L.$news_list['photo']);
+			$img_json_bar = $func->getImgSize($news_list['photo'],Helper::thumbnail_link($news_list['photo']));
 			$seo->updateSeoDB(json_encode($img_json_bar),'news_list',$news_list['id']);
 		}
 		if(count($img_json_bar) > 0)
 		{
-			$seo->setSeo('photo',$config_base.THUMBS.'/'.$img_json_bar['w'].'x'.$img_json_bar['h'].'x2/'.UPLOAD_NEWS_L.$news_list['photo']);
+			$seo->setSeo('photo',Helper::thumbnail_link($news_list['photo']));
 			$seo->setSeo('photo:width',$img_json_bar['w']);
 			$seo->setSeo('photo:height',$img_json_bar['h']);
 			$seo->setSeo('photo:type',$img_json_bar['m']);
@@ -170,12 +170,12 @@
 		$img_json_bar = (isset($news_cat['options']) && $news_cat['options'] != '') ? json_decode($news_cat['options'],true) : null;
 		if($img_json_bar == null || ($img_json_bar['p'] != $news_cat['photo']))
 		{
-			$img_json_bar = $func->getImgSize($news_cat['photo'],UPLOAD_NEWS_L.$news_cat['photo']);
+			$img_json_bar = $func->getImgSize($news_cat['photo'],Helper::thumbnail_link($news_cat['photo']));
 			$seo->updateSeoDB(json_encode($img_json_bar),'news_cat',$news_cat['id']);
 		}
 		if(count($img_json_bar) > 0)
 		{
-			$seo->setSeo('photo',$config_base.THUMBS.'/'.$img_json_bar['w'].'x'.$img_json_bar['h'].'x2/'.UPLOAD_NEWS_L.$news_cat['photo']);
+			$seo->setSeo('photo',Helper::thumbnail_link($news_cat['photo']));
 			$seo->setSeo('photo:width',$img_json_bar['w']);
 			$seo->setSeo('photo:height',$img_json_bar['h']);
 			$seo->setSeo('photo:type',$img_json_bar['m']);
@@ -227,12 +227,12 @@
 		$img_json_bar = (isset($news_item['options']) && $news_item['options'] != '') ? json_decode($news_item['options'],true) : null;
 		if($img_json_bar == null || ($img_json_bar['p'] != $news_item['photo']))
 		{
-			$img_json_bar = $func->getImgSize($news_item['photo'],UPLOAD_NEWS_L.$news_item['photo']);
+			$img_json_bar = $func->getImgSize($news_item['photo'],Helper::thumbnail_link($news_item['photo']));
 			$seo->updateSeoDB(json_encode($img_json_bar),'news_item',$news_item['id']);
 		}
 		if(count($img_json_bar) > 0)
 		{
-			$seo->setSeo('photo',$config_base.THUMBS.'/'.$img_json_bar['w'].'x'.$img_json_bar['h'].'x2/'.UPLOAD_NEWS_L.$news_item['photo']);
+			$seo->setSeo('photo',Helper::thumbnail_link($news_item['photo']));
 			$seo->setSeo('photo:width',$img_json_bar['w']);
 			$seo->setSeo('photo:height',$img_json_bar['h']);
 			$seo->setSeo('photo:type',$img_json_bar['m']);
@@ -288,12 +288,12 @@
 		$img_json_bar = (isset($news_sub['options']) && $news_sub['options'] != '') ? json_decode($news_sub['options'],true) : null;
 		if($img_json_bar == null || ($img_json_bar['p'] != $news_sub['photo']))
 		{
-			$img_json_bar = $func->getImgSize($news_sub['photo'],UPLOAD_NEWS_L.$news_sub['photo']);
+			$img_json_bar = $func->getImgSize($news_sub['photo'],Helper::thumbnail_link($news_sub['photo']));
 			$seo->updateSeoDB(json_encode($img_json_bar),'news_sub',$news_sub['id']);
 		}
 		if(count($img_json_bar) > 0)
 		{
-			$seo->setSeo('photo',$config_base.THUMBS.'/'.$img_json_bar['w'].'x'.$img_json_bar['h'].'x2/'.UPLOAD_NEWS_L.$news_sub['photo']);
+			$seo->setSeo('photo',Helper::thumbnail_link($news_sub['photo']));
 			$seo->setSeo('photo:width',$img_json_bar['w']);
 			$seo->setSeo('photo:height',$img_json_bar['h']);
 			$seo->setSeo('photo:type',$img_json_bar['m']);
@@ -325,12 +325,12 @@
 		{
 			if($img_json_bar == null || ($img_json_bar['p'] != $seopage['photo']))
 			{
-				$img_json_bar = $func->getImgSize($seopage['photo'],UPLOAD_SEOPAGE_L.$seopage['photo']);
+				$img_json_bar = $func->getImgSize($seopage['photo'],Helper::thumbnail_link($seopage['photo']));
 				$seo->updateSeoDB(json_encode($img_json_bar),'seopage',$seopage['id']);
 			}
 			if(count($img_json_bar) > 0)
 			{
-				$seo->setSeo('photo',$config_base.THUMBS.'/'.$img_json_bar['w'].'x'.$img_json_bar['h'].'x2/'.UPLOAD_SEOPAGE_L.$seopage['photo']);
+				$seo->setSeo('photo',Helper::thumbnail_link($seopage['photo']));
 				$seo->setSeo('photo:width',$img_json_bar['w']);
 				$seo->setSeo('photo:height',$img_json_bar['h']);
 				$seo->setSeo('photo:type',$img_json_bar['m']);

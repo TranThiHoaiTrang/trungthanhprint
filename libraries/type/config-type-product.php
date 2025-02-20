@@ -14,7 +14,7 @@ $config['product'][$nametype]['size'] = false;
 $config['product'][$nametype]['doday'] = false;
 $config['product'][$nametype]['id_khuyenmai'] = false;
 $config['product'][$nametype]['tags'] = false;
-$config['product'][$nametype]['link_video'] = false;
+$config['product'][$nametype]['link_video'] = true;
 $config['product'][$nametype]['import'] = false;
 $config['product'][$nametype]['export'] = false;
 $config['product'][$nametype]['view'] = false;
@@ -23,7 +23,7 @@ $config['product'][$nametype]['copy_image'] = true;
 $config['product'][$nametype]['slug'] = true;
 $config['product'][$nametype]['check'] = array("noibat" => "Nổi bật");
 $config['product'][$nametype]['images'] = true;
-$config['product'][$nametype]['images1'] = true;
+$config['product'][$nametype]['images1'] = false;
 $config['product'][$nametype]['show_images'] = true;
 $config['product'][$nametype]['gallery'] = array(
     $nametype => array(
@@ -80,6 +80,7 @@ $config['product'][$nametype]['images_list'] = true;
 $config['product'][$nametype]['images1_list'] = true;
 $config['product'][$nametype]['images2_list'] = true;
 $config['product'][$nametype]['show_images_list'] = true;
+$config['product'][$nametype]['title_phu'] = true;
 $config['product'][$nametype]['slug_list'] = true;
 $config['product'][$nametype]['check_list'] = array("noibat" => "Nổi bật","hot" => "Hot");
 $config['product'][$nametype]['mota_list'] = true;
@@ -96,10 +97,12 @@ $config['product'][$nametype]['img_type_list'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG
 
 /* Sản phẩm (Cat) */
 $config['product'][$nametype]['title_main_cat'] = "Sản phẩm cấp 2";
-$config['product'][$nametype]['images_cat'] = false;
+$config['product'][$nametype]['images_cat'] = true;
 $config['product'][$nametype]['show_images_cat'] = false;
 $config['product'][$nametype]['slug_cat'] = true;
 $config['product'][$nametype]['check_cat'] = array("noibat" => "Nổi bật","hot" => "Hot");
+$config['product'][$nametype]['motangan_cat'] = true;
+$config['product'][$nametype]['motangan_cke_cat'] = true;
 $config['product'][$nametype]['mota_cat'] = false;
 $config['product'][$nametype]['mota_cke_cat'] = false;
 $config['product'][$nametype]['noidung_cat'] = true;
@@ -112,10 +115,12 @@ $config['product'][$nametype]['img_type_cat'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|
 
 /* Sản phẩm (Item) */
 $config['product'][$nametype]['title_main_item'] = "Sản phẩm cấp 3";
-$config['product'][$nametype]['images_item'] = false;
+$config['product'][$nametype]['images_item'] = true;
 $config['product'][$nametype]['show_images_item'] = false;
 $config['product'][$nametype]['slug_item'] = true;
 $config['product'][$nametype]['check_item'] = array();
+$config['product'][$nametype]['motangan_item'] = true;
+$config['product'][$nametype]['motangan_cke_item'] = true;
 $config['product'][$nametype]['mota_item'] = false;
 $config['product'][$nametype]['noidung_item'] = true;
 $config['product'][$nametype]['noidung_cke_item'] = true;

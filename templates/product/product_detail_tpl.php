@@ -4,19 +4,19 @@
             <div class="breadCrumbs">
                 <div><?= $breadcrumbs ?></div>
             </div>
-            <div class="bread_title"><?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></div>
+            <!-- <div class="bread_title"></?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></div> -->
         </div>
     </div>
 </div>
-<div class="all_banner_page">
+<!-- <div class="all_banner_page">
     <div class="fixwidth">
         <div class="row align-items-center">
             <div class="col-md-6">
                 <div class="noidung_banner_page">
-                    <?= htmlspecialchars_decode($row_detail['motangan' . $lang]) ?>
+                    </?= htmlspecialchars_decode($row_detail['motangan' . $lang]) ?>
                 </div>
                 <div class="mota_banner_page">
-                    <?= htmlspecialchars_decode($row_detail['mota' . $lang]) ?>
+                    </?= htmlspecialchars_decode($row_detail['mota' . $lang]) ?>
                 </div>
                 <a href="san-pham">
                     <div class="xemthem_gioithieu">
@@ -27,48 +27,53 @@
             </div>
             <div class="col-md-6">
                 <div class="img_banner_page">
-                    <?= Helper::the_thumbnail($row_detail['photo1'], '', $row_detail['ten' . $lang], true) ?>
+                    </?= Helper::the_thumbnail($row_detail['photo1'], '', $row_detail['ten' . $lang], true) ?>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <div class="pt-5 pb-5" style="background: #F1F6F8;">
     <input type="hidden" name="idpro" value="<?= $row_detail['id'] ?>">
     <div class="fixwidth">
         <div class="clearfix">
             <div class="grid-pro-detail w-clear">
                 <div class="left-pro-detail w-clear">
-                    <a id="Zoom-1" class="MagicZoom" data-options="zoomMode: magnifier; hint: always; rightClick: true; selectorTrigger: click; expandCaption: true; history: true;variableZoom: true;zoomOn: click;cssClass: mz-show-arrows;" href="<?= Helper::thumbnail_link($row_detail['photo']) ?>" title="<?= $row_detail['ten' . $lang] ?>">
+                    <a id="Zoom-1" class="MagicZoom" data-options="zoomMode: magnifier; hint: always; rightClick: true; selectorTrigger: click; expandCaption: true; expand: true; variableZoom: true;" href="<?= Helper::thumbnail_link($row_detail['photo']) ?>" title="<?= $row_detail['ten' . $lang] ?>">
                         <img onerror="this.src='<?= Helper::noimage() ?>';" src="<?= Helper::thumbnail_link($row_detail['photo']) ?>" alt="<?= $row_detail['ten' . $lang] ?>">
                     </a>
                     <?php
-                    if ($row_detail['gallery']) {
-                        $hinhanhsp = explode(',', $row_detail['gallery']);
-                        if ($hinhanhsp) {
-                            if (count($hinhanhsp) > 0) { ?>
-                                <div class="gallery-thumb-pro">
-                                    <!-- <p class="control-carousel prev-carousel prev-thumb-pro transition"><i class="fas fa-chevron-left"></i></p> -->
-                                    <div class="owl-carousel owl-theme owl-thumb-pro">
-                                        <a class="thumb-pro-detail" data-zoom-id="Zoom-1" href="<?= Helper::thumbnail_link($row_detail['photo']) ?>" title="<?= $row_detail['ten' . $lang] ?>">
-                                            <img onerror="this.src='<?= Helper::noimage() ?>';" src="<?= Helper::thumbnail_link($row_detail['photo']) ?>" alt="<?= $row_detail['ten' . $lang] ?>">
+                    if ($row_detail['gallery'] || $row_detail['link_video']) { ?>
+                        <div class="gallery-thumb-pro">
+                            <p class="control-carousel prev-carousel prev-thumb-pro transition"><i class="fas fa-chevron-left"></i></p>
+                            <div class="owl-carousel owl-theme owl-thumb-pro">
+                                <?php if ($row_detail['link_video']) {
+                                    $youtubeId = $func->getYoutube($row_detail['link_video']);
+                                ?>
+                                    <a class="thumb-pro-detail thumb-pro-detail-video" data-zoom-id="Zoom-1" href="https://www.youtube.com/embed/<?= $youtubeId ?>?autoplay=1" onclick="playVideoOnMain('<?= $youtubeId ?>');" data-type="iframe" title="<?= $row_detail['ten' . $lang] ?>">
+                                        <img src="https://img.youtube.com/vi/<?= $youtubeId ?>/maxresdefault.jpg" alt="<?= $row_detail['ten' . $lang] ?>" />
+                                    </a>
+                                <?php } ?>
+                                <a class="thumb-pro-detail" data-zoom-id="Zoom-1" href="javascript:void(0);" onclick="showImageInMain('<?= Helper::thumbnail_link($row_detail['photo']) ?>', '<?= $row_detail['ten' . $lang] ?>');" title="<?= $row_detail['ten' . $lang] ?>">
+                                    <img onerror="this.src='<?= Helper::noimage() ?>';" src="<?= Helper::thumbnail_link($row_detail['photo']) ?>" alt="<?= $row_detail['ten' . $lang] ?>">
+                                </a>
+                                <?php
+                                if($row_detail['gallery']){
+                                $hinhanhsp = explode(',', $row_detail['gallery']);
+                                if (count($hinhanhsp) > 0) { ?>
+                                    <?php foreach ($hinhanhsp as $v) { ?>
+                                        <a class="thumb-pro-detail" data-zoom-id="Zoom-1" href="javascript:void(0);" onclick="showImageInMain('<?= Helper::thumbnail_link($v) ?>', '<?= $row_detail['ten' . $lang] ?>');" title="<?= $row_detail['ten' . $lang] ?>">
+                                            <img onerror="this.src='<?= Helper::noimage() ?>';" src="<?= Helper::thumbnail_link($v) ?>">
                                         </a>
-                                        <?php foreach ($hinhanhsp as $v) { ?>
-                                            <a class="thumb-pro-detail" data-zoom-id="Zoom-1" href="<?= Helper::thumbnail_link($v) ?>" title="<?= $row_detail['ten' . $lang] ?>">
-                                                <img onerror="this.src='<?= Helper::noimage() ?>';" src="<?= Helper::thumbnail_link($v) ?>">
-                                            </a>
-                                        <?php } ?>
-                                    </div>
-                                    <!-- <p class="control-carousel next-carousel next-thumb-pro transition"><i class="fas fa-chevron-right"></i></p> -->
-                                </div>
-                    <?php
-                            }
-                        }
-                    }
-                    ?>
+                                    <?php } ?>
+                                <?php } } ?>
+                            </div>
+                            <p class="control-carousel next-carousel next-thumb-pro transition"><i class="fas fa-chevron-right"></i></p>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="right-pro-detail w-clear">
-                    <p class="title-pro-detail"><?= $row_detail['ten' . $lang] ?></p>
+                    <h1 class="title-pro-detail"><?= $row_detail['title_phu' . $lang] ?></h1>
                     <div class="thongtin_product">
                         <span>Chất liệu: </span>
                         <span><?= $row_detail['chatlieu'] ?> </span>
@@ -153,15 +158,11 @@
                 <div class="clear"></div>
             </div>
             <div class="all_nd_product_detail">
-                <div class="title_info_pro_detail"><span>Đặc điểm <?= $row_detail['ten' . $lang] ?></span></div>
-                <div class="entry-post">
+                <div class="entry-post mt-0">
                     <div class="entry-left">
                         <div class="contact_product">
-                            <h1 class="name_tt_chitiet">
-                                <?= $row_detail['title_phu' . $lang] ?>
-                            </h1>
                             <div class="info-pro-detail active all_gioithieu_index" id="toc-content">
-                            <?= (isset($row_detail['noidung' . $lang]) && $row_detail['noidung' . $lang] != '') ? htmlspecialchars_decode($row_detail['noidung' . $lang]) : '' ?>
+                                <?= (isset($row_detail['noidung' . $lang]) && $row_detail['noidung' . $lang] != '') ? htmlspecialchars_decode($row_detail['noidung' . $lang]) : '' ?>
                             </div>
                         </div>
                     </div>
@@ -304,17 +305,17 @@
 
         <?php
         $tacgia = $d->rawQueryOne("select * from #_news where type = 'tac-gia' and id = '" . $row_detail['id_author'] . "' and hienthi > 0 order by stt,id desc");
-        if($tacgia){
+        if ($tacgia) {
         ?>
-        <div class="tacgia mt-0">
-            <div class="author-img">
-                <?= Helper::the_thumbnail($tacgia['photo'], '', $tacgia['ten' . $lang], true) ?>
+            <div class="tacgia mt-0">
+                <div class="author-img">
+                    <?= Helper::the_thumbnail($tacgia['photo'], '', $tacgia['ten' . $lang], true) ?>
+                </div>
+                <div class="author-description">
+                    <div class="name_author"><?= $tacgia['ten' . $lang] ?></div>
+                    <div class="mota_author"><?= $tacgia['mota' . $lang] ?></div>
+                </div>
             </div>
-            <div class="author-description">
-                <div class="name_author"><?= $tacgia['ten'.$lang] ?></div>
-                <div class="mota_author"><?= $tacgia['mota'.$lang] ?></div>
-            </div>
-        </div>
         <?php } ?>
 
         <!-- <div class="title_sp_cungloai">Sản phẩm tương tự</div> -->

@@ -129,11 +129,11 @@ if ($id != '') {
 	$seo->setSeo('url', $func->getPageURL());
 	$img_json_bar = (isset($row_detail['options']) && $row_detail['options'] != '') ? json_decode($row_detail['options'], true) : null;
 	if ($img_json_bar == null || ($img_json_bar['p'] != $row_detail['photo'])) {
-		$img_json_bar = $func->getImgSize($row_detail['photo'], UPLOAD_PRODUCT_L . $row_detail['photo']);
+		$img_json_bar = $func->getImgSize($row_detail['photo'], Helper::thumbnail_link($row_detail['photo']));
 		$seo->updateSeoDB(json_encode($img_json_bar), 'product', $row_detail['id']);
 	}
 	if (count($img_json_bar) > 0) {
-		$seo->setSeo('photo', $config_base . THUMBS . '/' . $img_json_bar['w'] . 'x' . $img_json_bar['h'] . 'x2/' . UPLOAD_PRODUCT_L . $row_detail['photo']);
+		$seo->setSeo('photo', Helper::thumbnail_link($row_detail['photo']));
 		$seo->setSeo('photo:width', $img_json_bar['w']);
 		$seo->setSeo('photo:height', $img_json_bar['h']);
 		$seo->setSeo('photo:type', $img_json_bar['m']);
@@ -149,7 +149,8 @@ if ($id != '') {
 	$breadcrumbs = $breadcr->getBreadCrumbs();
 } else if ($idl != '') {
 	/* Lấy cấp 1 detail */
-	$pro_list = $d->rawQueryOne("select id, ten$lang, tenkhongdau$lang, type, photo, photo1, options,noidung$lang,mota$lang,motangan$lang from #_product_list where id = ? and type = ? limit 0,1", array($idl, $type));
+	$pro_list = $d->rawQueryOne("select * from #_product_list where id = ? and type = ? limit 0,1", array($idl, $type));
+	$pro_seo = $d->rawQueryOne("select * from #_product_list where id = ? and type = ? limit 0,1", array($idl, $type));
 
 
 	$noidung_page = $pro_list['noidung' . $lang];
@@ -165,11 +166,11 @@ if ($id != '') {
 	$seo->setSeo('url', $func->getPageURL());
 	$img_json_bar = (isset($pro_list['options']) && $pro_list['options'] != '') ? json_decode($pro_list['options'], true) : null;
 	if ($img_json_bar == null || ($img_json_bar['p'] != $pro_list['photo'])) {
-		$img_json_bar = $func->getImgSize($pro_list['photo'], UPLOAD_PRODUCT_L . $pro_list['photo']);
+		$img_json_bar = $func->getImgSize($pro_list['photo'], Helper::thumbnail_link($pro_list['photo']));
 		$seo->updateSeoDB(json_encode($img_json_bar), 'product_list', $pro_list['id']);
 	}
 	if (count($img_json_bar) > 0) {
-		$seo->setSeo('photo', $config_base . THUMBS . '/' . $img_json_bar['w'] . 'x' . $img_json_bar['h'] . 'x2/' . UPLOAD_PRODUCT_L . $pro_list['photo']);
+		$seo->setSeo('photo', Helper::thumbnail_link($pro_list['photo']));
 		$seo->setSeo('photo:width', $img_json_bar['w']);
 		$seo->setSeo('photo:height', $img_json_bar['h']);
 		$seo->setSeo('photo:type', $img_json_bar['m']);
@@ -198,7 +199,8 @@ if ($id != '') {
 	$breadcrumbs = $breadcr->getBreadCrumbs();
 } else if ($idc != '') {
 	/* Lấy cấp 2 detail */
-	$pro_cat = $d->rawQueryOne("select id, id_list, ten$lang, tenkhongdau$lang, type, photo, options,noidung$lang,mota$lang from #_product_cat where id = ? and type = ? limit 0,1", array($idc, $type));
+	$pro_cat = $d->rawQueryOne("select * from #_product_cat where id = ? and type = ? limit 0,1", array($idc, $type));
+	$pro_seo = $d->rawQueryOne("select * from #_product_cat where id = ? and type = ? limit 0,1", array($idc, $type));
 	$noidung_page = $pro_cat['noidung' . $lang];
 	$mota_page = $pro_cat['mota' . $lang];
 	/* Lấy cấp 1 */
@@ -232,11 +234,11 @@ if ($id != '') {
 	$seo->setSeo('url', $func->getPageURL());
 	$img_json_bar = (isset($pro_cat['options']) && $pro_cat['options'] != '') ? json_decode($pro_cat['options'], true) : null;
 	if ($img_json_bar == null || ($img_json_bar['p'] != $pro_cat['photo'])) {
-		$img_json_bar = $func->getImgSize($pro_cat['photo'], UPLOAD_PRODUCT_L . $pro_cat['photo']);
+		$img_json_bar = $func->getImgSize($pro_cat['photo'], Helper::thumbnail_link($pro_cat['photo']));
 		$seo->updateSeoDB(json_encode($img_json_bar), 'product_cat', $pro_cat['id']);
 	}
 	if (count($img_json_bar) > 0) {
-		$seo->setSeo('photo', $config_base . THUMBS . '/' . $img_json_bar['w'] . 'x' . $img_json_bar['h'] . 'x2/' . UPLOAD_PRODUCT_L . $pro_cat['photo']);
+		$seo->setSeo('photo', Helper::thumbnail_link($pro_cat['photo']));
 		$seo->setSeo('photo:width', $img_json_bar['w']);
 		$seo->setSeo('photo:height', $img_json_bar['h']);
 		$seo->setSeo('photo:type', $img_json_bar['m']);
@@ -249,7 +251,8 @@ if ($id != '') {
 	$breadcrumbs = $breadcr->getBreadCrumbs();
 } else if ($idi != '') {
 	/* Lấy cấp 3 detail */
-	$pro_item = $d->rawQueryOne("select id, id_list, id_cat, ten$lang, tenkhongdauvi, tenkhongdauen, type, photo, options from #_product_item where id = ? and type = ? limit 0,1", array($idi, $type));
+	$pro_item = $d->rawQueryOne("select * from #_product_item where id = ? and type = ? limit 0,1", array($idi, $type));
+	$pro_seo = $d->rawQueryOne("select * from #_product_item where id = ? and type = ? limit 0,1", array($idi, $type));
 
 	/* Lấy cấp 1 */
 	$pro_list = $d->rawQueryOne("select id, ten$lang, tenkhongdauvi, tenkhongdauen from #_product_list where id = ? and type = ? limit 0,1", array($pro_item['id_list'], $type));
@@ -285,11 +288,11 @@ if ($id != '') {
 	$seo->setSeo('url', $func->getPageURL());
 	$img_json_bar = (isset($pro_item['options']) && $pro_item['options'] != '') ? json_decode($pro_item['options'], true) : null;
 	if ($img_json_bar == null || ($img_json_bar['p'] != $pro_item['photo'])) {
-		$img_json_bar = $func->getImgSize($pro_item['photo'], UPLOAD_PRODUCT_L . $pro_item['photo']);
+		$img_json_bar = $func->getImgSize($pro_item['photo'], Helper::thumbnail_link($pro_item['photo']));
 		$seo->updateSeoDB(json_encode($img_json_bar), 'product_item', $pro_item['id']);
 	}
 	if (count($img_json_bar) > 0) {
-		$seo->setSeo('photo', $config_base . THUMBS . '/' . $img_json_bar['w'] . 'x' . $img_json_bar['h'] . 'x2/' . UPLOAD_PRODUCT_L . $pro_item['photo']);
+		$seo->setSeo('photo', Helper::thumbnail_link($pro_item['photo']));
 		$seo->setSeo('photo:width', $img_json_bar['w']);
 		$seo->setSeo('photo:height', $img_json_bar['h']);
 		$seo->setSeo('photo:type', $img_json_bar['m']);
@@ -342,11 +345,11 @@ if ($id != '') {
 	$seo->setSeo('url', $func->getPageURL());
 	$img_json_bar = (isset($pro_sub['options']) && $pro_sub['options'] != '') ? json_decode($pro_sub['options'], true) : null;
 	if ($img_json_bar == null || ($img_json_bar['p'] != $pro_sub['photo'])) {
-		$img_json_bar = $func->getImgSize($pro_sub['photo'], UPLOAD_PRODUCT_L . $pro_sub['photo']);
+		$img_json_bar = $func->getImgSize($pro_sub['photo'], Helper::thumbnail_link($pro_sub['photo']));
 		$seo->updateSeoDB(json_encode($img_json_bar), 'product_sub', $pro_sub['id']);
 	}
 	if (count($img_json_bar) > 0) {
-		$seo->setSeo('photo', $config_base . THUMBS . '/' . $img_json_bar['w'] . 'x' . $img_json_bar['h'] . 'x2/' . UPLOAD_PRODUCT_L . $pro_sub['photo']);
+		$seo->setSeo('photo', Helper::thumbnail_link($pro_sub['photo']));
 		$seo->setSeo('photo:width', $img_json_bar['w']);
 		$seo->setSeo('photo:height', $img_json_bar['h']);
 		$seo->setSeo('photo:type', $img_json_bar['m']);
@@ -383,11 +386,11 @@ if ($id != '') {
 	$seo->setSeo('url', $func->getPageURL());
 	$img_json_bar = (isset($pro_brand['options']) && $pro_brand['options'] != '') ? json_decode($pro_brand['options'], true) : null;
 	if ($img_json_bar == null || ($img_json_bar['p'] != $pro_brand['photo'])) {
-		$img_json_bar = $func->getImgSize($pro_brand['photo'], UPLOAD_PRODUCT_L . $pro_brand['photo']);
+		$img_json_bar = $func->getImgSize($pro_brand['photo'], Helper::thumbnail_link($pro_brand['photo']));
 		$seo->updateSeoDB(json_encode($img_json_bar), 'product_brand', $pro_brand['id']);
 	}
 	if (count($img_json_bar) > 0) {
-		$seo->setSeo('photo', $config_base . THUMBS . '/' . $img_json_bar['w'] . 'x' . $img_json_bar['h'] . 'x2/' . UPLOAD_PRODUCT_L . $pro_brand['photo']);
+		$seo->setSeo('photo', Helper::thumbnail_link($pro_brand['photo']));
 		$seo->setSeo('photo:width', $img_json_bar['w']);
 		$seo->setSeo('photo:height', $img_json_bar['h']);
 		$seo->setSeo('photo:type', $img_json_bar['m']);
@@ -433,11 +436,11 @@ if ($id != '') {
 	$seo->setSeo('url', $func->getPageURL());
 	$img_json_bar = (isset($pro_danhmuc['options']) && $pro_danhmuc['options'] != '') ? json_decode($pro_danhmuc['options'], true) : null;
 	if ($img_json_bar == null || ($img_json_bar['p'] != $pro_danhmuc['photo'])) {
-		$img_json_bar = $func->getImgSize($pro_danhmuc['photo'], UPLOAD_PRODUCT_L . $pro_danhmuc['photo']);
+		$img_json_bar = $func->getImgSize($pro_danhmuc['photo'], Helper::thumbnail_link($pro_danhmuc['photo']));
 		$seo->updateSeoDB(json_encode($img_json_bar), 'product_danhmuc', $pro_danhmuc['id']);
 	}
 	if (count($img_json_bar) > 0) {
-		$seo->setSeo('photo', $config_base . THUMBS . '/' . $img_json_bar['w'] . 'x' . $img_json_bar['h'] . 'x2/' . UPLOAD_PRODUCT_L . $pro_danhmuc['photo']);
+		$seo->setSeo('photo', Helper::thumbnail_link($pro_danhmuc['photo']));
 		$seo->setSeo('photo:width', $img_json_bar['w']);
 		$seo->setSeo('photo:height', $img_json_bar['h']);
 		$seo->setSeo('photo:type', $img_json_bar['m']);
@@ -478,11 +481,11 @@ if ($id != '') {
 	$seo->setSeo('url', $func->getPageURL());
 	$img_json_bar = (isset($pro_danhmuc_cap['options']) && $pro_danhmuc_cap['options'] != '') ? json_decode($pro_danhmuc_cap['options'], true) : null;
 	if ($img_json_bar == null || ($img_json_bar['p'] != $pro_danhmuc_cap['photo'])) {
-		$img_json_bar = $func->getImgSize($pro_danhmuc_cap['photo'], UPLOAD_PRODUCT_L . $pro_danhmuc_cap['photo']);
+		$img_json_bar = $func->getImgSize($pro_danhmuc_cap['photo'], Helper::thumbnail_link($pro_danhmuc_cap['photo']));
 		$seo->updateSeoDB(json_encode($img_json_bar), 'product_danhmuc_cap', $pro_danhmuc_cap['id']);
 	}
 	if (count($img_json_bar) > 0) {
-		$seo->setSeo('photo', $config_base . THUMBS . '/' . $img_json_bar['w'] . 'x' . $img_json_bar['h'] . 'x2/' . UPLOAD_PRODUCT_L . $pro_danhmuc_cap['photo']);
+		$seo->setSeo('photo', Helper::thumbnail_link($pro_danhmuc_cap['photo']));
 		$seo->setSeo('photo:width', $img_json_bar['w']);
 		$seo->setSeo('photo:height', $img_json_bar['h']);
 		$seo->setSeo('photo:type', $img_json_bar['m']);
@@ -522,11 +525,11 @@ if ($id != '') {
 	$img_json_bar = (isset($seopage['options']) && $seopage['options'] != '') ? json_decode($seopage['options'], true) : null;
 	if (!empty($seopage['photo'])) {
 		if ($img_json_bar == null || ($img_json_bar['p'] != $seopage['photo'])) {
-			$img_json_bar = $func->getImgSize($seopage['photo'], UPLOAD_SEOPAGE_L . $seopage['photo']);
+			$img_json_bar = $func->getImgSize($seopage['photo'], Helper::thumbnail_link($seopage['photo']));
 			$seo->updateSeoDB(json_encode($img_json_bar), 'seopage', $seopage['id']);
 		}
 		if (count($img_json_bar) > 0) {
-			$seo->setSeo('photo', $config_base . THUMBS . '/' . $img_json_bar['w'] . 'x' . $img_json_bar['h'] . 'x2/' . UPLOAD_SEOPAGE_L . $seopage['photo']);
+			$seo->setSeo('photo', Helper::thumbnail_link($seopage['photo']));
 			$seo->setSeo('photo:width', $img_json_bar['w']);
 			$seo->setSeo('photo:height', $img_json_bar['h']);
 			$seo->setSeo('photo:type', $img_json_bar['m']);
