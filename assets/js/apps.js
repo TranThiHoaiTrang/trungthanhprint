@@ -181,7 +181,7 @@ NN_FRAMEWORK.Search = function () {
 
 /* Videos */
 NN_FRAMEWORK.Videos = function () {
-  if ($(".video").exists()) {
+  // if ($(".video").exists()) {
     $('[data-fancybox="video"]').fancybox({
       transitionEffect: "fade",
       transitionDuration: 800,
@@ -191,8 +191,18 @@ NN_FRAMEWORK.Videos = function () {
       infobar: false,
       toolbar: true,
       hash: false,
-    });
-  }
+      iframe: {
+        preload: false, // Tránh việc Fancybox tự động đặt chiều cao iframe không chính xác
+        css: {
+            width: "100%",
+            height: "100%"
+        }
+    },
+    Thumbs: {
+        autoStart: true, // Hiển thị thumbnail phía dưới video
+    },
+  });
+  // }
 };
 
 /* Owl */
@@ -685,7 +695,7 @@ NN_FRAMEWORK.OwlProDetail = function () {
   if ($(".owl-thumb-pro").exists()) {
     $(".owl-thumb-pro").owlCarousel({
       items: 4,
-      loop: true,
+      loop: false,
       rewind: true,
       lazyLoad: false,
       mouseDrag: true,

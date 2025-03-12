@@ -70,7 +70,7 @@
 
     <div class="all_gioithie_index">
         <div class="row align-items-center">
-            <div class="col-md-4 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" >
+            <div class="col-md-4 aos-init aos-animate" data-aos="fade-right" data-aos-duration="1000" >
                 <div class="all_content_gioithieu">
                     <h2 class="mota_ngan_gioithieu"><?= htmlspecialchars_decode($gioithieu['motangan' . $lang]) ?></h2>
                     <div class="mota_gioithieu"><?= htmlspecialchars_decode($gioithieu['mota' . $lang]) ?></div>
@@ -82,7 +82,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-8 aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000" >
+            <div class="col-md-8 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1000" >
                 <a data-fancybox="video" data-src="<?= $video_gioithieu['link_video'] ?>" data-name="<?= $video_gioithieu['ten' . $lang] ?>" title="<?= $video_gioithieu['ten' . $lang] ?>">
                     <div class="img_gioithieu">
                         <?= Helper::the_thumbnail($gioithieu['photo'], '', $gioithieu['ten' . $lang], true) ?>

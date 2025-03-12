@@ -39,7 +39,7 @@
         <div class="clearfix">
             <div class="grid-pro-detail w-clear">
                 <div class="left-pro-detail w-clear">
-                    <a id="Zoom-1" class="MagicZoom" data-options="zoomMode: magnifier; hint: always; rightClick: true; selectorTrigger: click; expandCaption: true; expand: true; variableZoom: true;" href="<?= Helper::thumbnail_link($row_detail['photo']) ?>" title="<?= $row_detail['ten' . $lang] ?>">
+                    <a id="Zoom-1" class="MagicZoom" data-options="" href="<?= Helper::thumbnail_link($row_detail['photo']) ?>" title="<?= $row_detail['ten' . $lang] ?>">
                         <img onerror="this.src='<?= Helper::noimage() ?>';" src="<?= Helper::thumbnail_link($row_detail['photo']) ?>" alt="<?= $row_detail['ten' . $lang] ?>">
                     </a>
                     <?php
@@ -50,23 +50,24 @@
                                 <?php if ($row_detail['link_video']) {
                                     $youtubeId = $func->getYoutube($row_detail['link_video']);
                                 ?>
-                                    <a class="thumb-pro-detail thumb-pro-detail-video" data-zoom-id="Zoom-1" href="https://www.youtube.com/embed/<?= $youtubeId ?>?autoplay=1" onclick="playVideoOnMain('<?= $youtubeId ?>');" data-type="iframe" title="<?= $row_detail['ten' . $lang] ?>">
+                                    <a class="thumb-pro-detail thumb-pro-detail-video" data-fancybox="video" data-src="https://www.youtube.com/embed/<?= $youtubeId ?>?autoplay=1" data-type="iframe" title="<?= $row_detail['ten' . $lang] ?>">
                                         <img src="https://img.youtube.com/vi/<?= $youtubeId ?>/maxresdefault.jpg" alt="<?= $row_detail['ten' . $lang] ?>" />
                                     </a>
                                 <?php } ?>
-                                <a class="thumb-pro-detail" data-zoom-id="Zoom-1" href="javascript:void(0);" onclick="showImageInMain('<?= Helper::thumbnail_link($row_detail['photo']) ?>', '<?= $row_detail['ten' . $lang] ?>');" title="<?= $row_detail['ten' . $lang] ?>">
+                                <a class="thumb-pro-detail" data-fancybox="video" data-src="<?= Helper::thumbnail_link($row_detail['photo']) ?>" onclick="showImageInMain('<?= Helper::thumbnail_link($row_detail['photo']) ?>', '<?= $row_detail['ten' . $lang] ?>');" title="<?= $row_detail['ten' . $lang] ?>">
                                     <img onerror="this.src='<?= Helper::noimage() ?>';" src="<?= Helper::thumbnail_link($row_detail['photo']) ?>" alt="<?= $row_detail['ten' . $lang] ?>">
                                 </a>
                                 <?php
-                                if($row_detail['gallery']){
-                                $hinhanhsp = explode(',', $row_detail['gallery']);
-                                if (count($hinhanhsp) > 0) { ?>
-                                    <?php foreach ($hinhanhsp as $v) { ?>
-                                        <a class="thumb-pro-detail" data-zoom-id="Zoom-1" href="javascript:void(0);" onclick="showImageInMain('<?= Helper::thumbnail_link($v) ?>', '<?= $row_detail['ten' . $lang] ?>');" title="<?= $row_detail['ten' . $lang] ?>">
-                                            <img onerror="this.src='<?= Helper::noimage() ?>';" src="<?= Helper::thumbnail_link($v) ?>">
-                                        </a>
-                                    <?php } ?>
-                                <?php } } ?>
+                                if ($row_detail['gallery']) {
+                                    $hinhanhsp = explode(',', $row_detail['gallery']);
+                                    if (count($hinhanhsp) > 0) { ?>
+                                        <?php foreach ($hinhanhsp as $v) { ?>
+                                            <a class="thumb-pro-detail" data-zoom-id="Zoom-1" data-fancybox="video" data-src="<?= Helper::thumbnail_link($v) ?>" onclick="showImageInMain('<?= Helper::thumbnail_link($v) ?>', '<?= $row_detail['ten' . $lang] ?>');" title="<?= $row_detail['ten' . $lang] ?>">
+                                                <img onerror="this.src='<?= Helper::noimage() ?>';" src="<?= Helper::thumbnail_link($v) ?>">
+                                            </a>
+                                        <?php } ?>
+                                <?php }
+                                } ?>
                             </div>
                             <p class="control-carousel next-carousel next-thumb-pro transition"><i class="fas fa-chevron-right"></i></p>
                         </div>

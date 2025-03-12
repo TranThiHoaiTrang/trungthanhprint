@@ -170,7 +170,6 @@ jQuery(function ($) {
       });
   });
 });
-
 function showImageInMain(imageUrl, altText) {
   var zoomContainer = document.getElementById('Zoom-1');
   if (zoomContainer) {
@@ -181,16 +180,15 @@ function showImageInMain(imageUrl, altText) {
           zoomContainer.removeChild(zoomContainer.firstChild);
       }
 
-      // Kiểm tra URL có chứa 'youtube.com/embed' hay không
+      // Kiểm tra URL có chứa 'youtube.com/embed' để hiển thị video hay hình ảnh
       if (imageUrl.includes('youtube.com/embed')) {
           zoomContainer.setAttribute('href', imageUrl);
-          zoomContainer.setAttribute('data-type', 'iframe'); // Đảm bảo hiển thị dưới dạng iframe
+          zoomContainer.setAttribute('data-type', 'iframe'); // Hiển thị dưới dạng iframe
       } else {
-          // Nếu là ảnh, xử lý như bình thường
           zoomContainer.setAttribute('href', imageUrl);
       }
 
-      // Tạo và thêm ảnh vào `zoomContainer` để hiển thị trước khi click
+      // Tạo và thêm ảnh vào `zoomContainer` để hiển thị
       var img = document.createElement('img');
       img.src = imageUrl;
       img.alt = altText;
@@ -199,7 +197,7 @@ function showImageInMain(imageUrl, altText) {
       };
       zoomContainer.appendChild(img);
 
-      // Làm mới MagicZoom sau khi thay đổi nội dung
+      // Làm mới MagicZoom để cập nhật nội dung mới
       MagicZoom.refresh('Zoom-1');
   }
 }

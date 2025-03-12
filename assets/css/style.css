@@ -1417,7 +1417,24 @@ div.menu_mobi, div.menu_mobi_add {
 }
 
 @media(max-width:600px){
-    
+    .fancybox-slide{
+        padding: 0;
+    }
+    .fancybox-slide--iframe .fancybox-content{
+        width: 100%;
+        /* height: fit-content !important; */
+        display: inline-block;
+        background: transparent;
+      }
+      .fancybox-slide--iframe .fancybox-content iframe{
+        left: 0;
+        position: absolute;
+        top: 50%;
+        height: fit-content;
+        min-height: 300px;
+        transform: translateY(-50%);
+      }
+
     .bread_title{
         font-size: 25px;
     }
